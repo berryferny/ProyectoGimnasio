@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // <--- ESTO FALTABA
+import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'; // <--- ESTO TAMBIÉN FALTABA
+import { RouterModule } from '@angular/router'; 
 import { MachineService } from '../../services/machine.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-machine-add',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], // Ahora sí Angular sabe qué son
+  imports: [CommonModule, FormsModule, RouterModule], 
   templateUrl: './machine-add.component.html',
   styleUrl: './machine-add.component.css'
 })
@@ -30,7 +30,7 @@ export class MachineAddComponent {
       this._machineService.save(this.newMachine).subscribe({
         next: (res) => {
           alert('¡Máquina añadida al Gym! 🏋️‍♀️');
-          this._router.navigate(['/']); // Te regresa a la lista automáticamente
+          this._router.navigate(['/']); 
         },
         error: (err) => {
           console.log('Error al guardar:', err);

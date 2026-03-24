@@ -16,7 +16,21 @@
     font-weight: bold;
     text-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
 }
-
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+}
+.nav-logo-img {
+    height: 60px; 
+    width: auto;  
+    margin-right: 15px; 
+    filter: drop-shadow(0 0 10px #76FF03); 
+    transition: transform 0.2s ease; 
+}
+.nav-logo-img:hover {
+    transform: scale(1.05); 
+}
 .nav-links {
     display: flex;
     list-style: none;

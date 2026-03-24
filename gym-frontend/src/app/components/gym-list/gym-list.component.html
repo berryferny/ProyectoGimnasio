@@ -1,7 +1,10 @@
 <div class="main-container">
     <header class="header-flex">
         <div class="title-section">
-            <h1>GIRLS GYM 🏋️‍♀️</h1>
+            <h1>GIRLS GYM </h1>
+            <a routerLink="/" class="nav-logo-link">
+                <img src="assets\images\logo1.jpeg" alt="GIRLS GYM Logo" class="nav-logo-img">
+            </a>
             <p class="subtitle">Entrena con lo mejor en Aguascalientes</p>
         </div>
         <button routerLink="/agregar" class="btn-nav-add">Agregar Nueva Máquina ➕</button>
@@ -15,13 +18,16 @@
 
     <div class="grid">
         <div class="card" *ngFor="let m of filteredMachines">
-            <img [src]="m.imagen || 'https://via.placeholder.com/300x200?text=Gym'" alt="maquina">
-            
+            <img [src]="m.image || 'https://via.placeholder.com/300x200?text=Gym'" [alt]="m.name">
+
             <div class="card-content">
                 <span class="status-badge" [ngClass]="m.estado">{{ m.estado }}</span>
-                <span class="badge">{{ m.musculo }}</span>
-                <h3>{{ m.nombre }}</h3>
-                <p>{{ m.uso }}</p>
+
+                <span class="badge">{{ m.muscle }}</span>
+
+                <h3>{{ m.name }}</h3>
+
+                <p>{{ m.description }}</p>
 
                 <button class="btn-delete" (click)="borrarMaquina(m._id)">Eliminar Máquina 🗑️</button>
             </div>

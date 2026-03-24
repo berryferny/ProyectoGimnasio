@@ -1,29 +1,33 @@
 <nav class="navbar">
-    <div class="nav-logo">GIRLS GYM 🏋️‍♀️</div>
-    <ul class="nav-links">
-        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Máquinas</a></li>
-        <li><a routerLink="/entrenadores" routerLinkActive="active">Entrenadores</a></li>
-        <li><a routerLink="/sucursales" routerLinkActive="active">Sucursales</a></li>
-    </ul>
-    <button routerLink="/agregar" class="nav-btn-add">Añadir +</button>
+  <div class="nav-logo">GIRLS GYM </div>
+  <ul class="nav-links">
+    <a routerLink="/" class="nav-logo-link">
+      <img src="assets\images\logo1.jpeg" alt="GIRLS GYM Logo" class="nav-logo-img">
+    </a>
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Máquinas</a></li>
+    <li><a routerLink="/entrenadores" routerLinkActive="active">Entrenadores</a></li>
+    <li><a routerLink="/sucursales" routerLinkActive="active">Sucursales</a></li>
+
+  </ul>
+  <button routerLink="/agregar" class="nav-btn-add">Añadir +</button>
 </nav>
 
 <router-outlet></router-outlet>
 
 <footer class="gym-footer">
-    <div class="footer-content">
-        <p class="copyright">© 2026 <span>GIRLS GYM AGS</span> - Programado con ❤️ </p>
-        
-        <div class="social-links">
-            <a href="#" class="social-item">
-                <span class="icon">📸</span> Instagram
-            </a>
-            <span class="divider">|</span>
-            <a href="#" class="social-item">
-                <span class="icon">🎵</span> TikTok
-            </a>
-        </div>
-        
-        <p class="location-tag">📍 Hecho en Aguascalientes, México</p>
+  <div class="footer-content">
+    <p class="copyright">© 2026 <span>GIRLS GYM AGS</span> - Programado con ❤️ </p>
+
+    <div class="social-links">
+      <a href="#" class="social-item">
+        <span class="icon">📸</span> Instagram
+      </a>
+      <span class="divider">|</span>
+      <a href="#" class="social-item">
+        <span class="icon">🎵</span> TikTok
+      </a>
     </div>
+
+    <p class="location-tag">📍 Hecho en Aguascalientes, México</p>
+  </div>
 </footer>
