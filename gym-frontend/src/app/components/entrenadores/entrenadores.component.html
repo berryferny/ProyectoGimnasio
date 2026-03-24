@@ -1,0 +1,16 @@
+<div class="main-container">
+    <h1 class="section-title">Nuestras Coaches Pro ⚡</h1>
+    <div class="trainer-grid">
+        <div class="trainer-card" *ngFor="let t of trainers">
+            <div class="trainer-img-wrapper">
+                <img [src]="t.imagen" alt="trainer">
+            </div>
+            <div class="trainer-info">
+                <h3>{{ t.nombre }}</h3>
+                <span class="specialty">{{ t.especialidad }}</span>
+                <p>"{{ t.frase }}"</p>
+                <a [href]="'https://wa.me/' + t.whatsapp" target="_blank" class="wa-btn">Agendar Clase 📱</a>
+            </div>
+        </div>
+    </div>
+</div>

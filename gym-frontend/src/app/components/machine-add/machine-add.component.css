@@ -1,0 +1,96 @@
+/* --- Estilos Globales para esta página --- */
+.main-container {
+    background: #0d0d0d; /* Fondo ultra oscuro */
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos todo */
+    color: white;
+}
+
+/* --- Botón Volver a la lista --- */
+.btn-back {
+    align-self: flex-start; /* Mueve el botón a la izquierda */
+    background: transparent;
+    border: 1px solid #d4ff00; /* Borde neón amarillo */
+    color: #d4ff00;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: rgba(212, 255, 0, 0.1); /* Efecto de brillo suave */
+}
+
+/* --- La Tarjeta del Formulario --- */
+.form-card {
+    background: #1a1a1a; /* Un poco más claro que el fondo */
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-card h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- Estilos para los campos de texto --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #d4ff00; /* Las etiquetas en amarillo neón */
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    background: #252525; /* Fondo oscuro para los inputs */
+    border: 1px solid #444; /* Borde sutil */
+    padding: 15px;
+    color: #fff; /* Texto blanco leíble */
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #d4ff00; /* Al hacer clic, el borde brilla */
+    box-shadow: 0 0 10px rgba(212, 255, 0, 0.2);
+}
+
+/* --- El Botón de ¡Añadir al Gym! --- */
+.btn-save {
+    width: 100%;
+    background: #d4ff00; /* Fondo amarillo neón */
+    color: #000; /* Texto negro para contrastar */
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+.btn-save:hover {
+    box-shadow: 0 0 20px rgba(212, 255, 0, 0.6); /* Brillo intenso al pasar el mouse */
+    transform: translateY(-3px); /* Pequeña elevación */
+}

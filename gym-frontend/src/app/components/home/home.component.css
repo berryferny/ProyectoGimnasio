@@ -1,0 +1,47 @@
+/* Aseguramos que el contenedor ocupe espacio */
+.home-container {
+    width: 100%;
+    min-height: 80vh; /* ¡ESTO ES VITAL! Le damos altura */
+    background-color: #1a1a1a; /* Un color de fondo para saber si el cuadro existe */
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Empezamos invisibles */
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Esta clase es la que "enciende" la foto */
+.slide.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la foto no se estire feo */
+    filter: brightness(0.6);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+    color: white;
+}

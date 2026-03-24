@@ -1,0 +1,29 @@
+<div class="main-container">
+    <button routerLink="/" class="btn-back">⬅ Volver a la lista</button>
+
+    <div class="form-card">
+        <h2>Registrar Nueva Máquina</h2>
+        
+        <div class="form-group">
+            <label>Nombre del Equipo</label>
+            <input type="text" [(ngModel)]="newMachine.nombre" placeholder="Ej: Prensa de Piernas">
+        </div>
+
+        <div class="form-group">
+            <label>¿Para qué sirve?</label>
+            <input type="text" [(ngModel)]="newMachine.uso" placeholder="Ej: Empuje de carga pesada">
+        </div>
+
+        <div class="form-group">
+            <label>Músculo Principal</label>
+            <input type="text" [(ngModel)]="newMachine.musculo" placeholder="Ej: Cuádriceps">
+        </div>
+
+        <div class="form-group">
+            <label>URL de la Imagen</label>
+            <input type="text" [(ngModel)]="newMachine.imagen" placeholder="Pega el link aquí">
+        </div>
+
+        <button (click)="guardar()" class="btn-save">¡Añadir al Gym! 🏋️‍♀️</button>
+    </div>
+</div>

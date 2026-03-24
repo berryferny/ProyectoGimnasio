@@ -1,46 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // <--- IMPORTANTE PARA NGMODEL
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router'; 
 import { MachineService } from '../../services/machine.service';
 import { Machine } from '../../models/machine';
 
 @Component({
   selector: 'app-gym-list',
   standalone: true,
-  imports: [CommonModule, FormsModule], // <--- AGREGADO FORMSMODULE AQUÍ
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './gym-list.component.html',
   styleUrl: './gym-list.component.css'
 })
 export class GymListComponent implements OnInit {
   public machines: Machine[] = [];
-  
-  // Objeto para el formulario de nueva máquina
-  public newMachine = {
-    nombre: '',
-    uso: '',
-    musculo: '',
-    imagen: ''
-  };
+  public filterText: string = ''; // <--- SOLUCIONA EL ERROR DE filterText
 
-  constructor(private _machineService: MachineService) {}
+  constructor(private _machineService: MachineService) { }
 
   ngOnInit(): void {
     this.cargarMaquinas();
   }
 
+  // <--- SOLUCIONA EL ERROR DE filteredMachines
+  get filteredMachines() {
+    return this.machines.filter(m =>
+      m.nombre.toLowerCase().includes(this.filterText.toLowerCase()) ||
+      m.musculo.toLowerCase().includes(this.filterText.toLowerCase())
+    );
+  }
+
   cargarMaquinas() {
     this._machineService.getMachines().subscribe({
       next: (res) => { if (res.machines) this.machines = res.machines; },
-      error: (err) => { console.log(err); }
-    });
-  }
-
-  guardarMaquina() {
-    this._machineService.save(this.newMachine).subscribe({
-      next: (res) => {
-        this.cargarMaquinas(); // Recargamos la lista
-        this.newMachine = { nombre: '', uso: '', musculo: '', imagen: '' }; // Limpiamos
-      },
       error: (err) => { console.log(err); }
     });
   }
@@ -57,7 +49,7 @@ export class GymListComponent implements OnInit {
 
   comentar(id: string, texto: string) {
     if (texto.trim() === '') return;
-    const comentario = { autor: 'Usuario', texto: texto }; // Aquí puedes cambiar 'Usuario' por el nombre de Fer
+    const comentario = { autor: 'Fernanda', texto: texto };
     this._machineService.addComment(id, comentario).subscribe({
       next: (res) => { this.cargarMaquinas(); },
       error: (err) => { console.log(err); }
@@ -65,16 +57,12 @@ export class GymListComponent implements OnInit {
   }
 
   borrarMaquina(id: string) {
-    const confirmar = confirm('¿Estás segura de que quieres eliminar esta máquina? No hay vuelta atrás.');
-    
+    const confirmar = confirm('¿Estás segura?');
     if (confirmar) {
-        this._machineService.deleteMachine(id).subscribe({
-            next: (res) => {
-                alert('Máquina eliminada con éxito 🗑️');
-                this.cargarMaquinas(); // Recargamos la lista para que desaparezca de la pantalla
-            },
-            error: (err) => { console.log(err); }
-        });
+      this._machineService.deleteMachine(id).subscribe({
+        next: () => { this.cargarMaquinas(); },
+        error: (err) => { console.log(err); }
+      });
     }
-}
+  }
 }

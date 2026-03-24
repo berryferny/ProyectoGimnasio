@@ -1,0 +1,110 @@
+/* --- Estilos Globales para esta página --- */
+.main-container {
+    background: #0d0d0d; /* Fondo ultra oscuro */
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: white; /* ¡TEXTO LEÍBLE! */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Soluciona el error del título que no se lee en image_3.png */
+.section-title {
+    color: #d4ff00 !important; /* Amarillo Neón */
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(212, 255, 0, 0.6);
+}
+
+/* --- Rejilla de Entrenadores --- */
+.trainer-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Separación perfecta */
+}
+
+/* --- La Tarjeta Pro --- */
+.trainer-card {
+    background: #1a1a1a;
+    width: 320px;
+    border-radius: 20px;
+    overflow: hidden; /* Para que nada se salga */
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.4s;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #d4ff00;
+    box-shadow: 0 0 25px rgba(212, 255, 0, 0.4); /* Brillo Neón */
+}
+
+/* --- La Foto Circular que Brilla --- */
+.trainer-img-wrapper {
+    width: 160px;
+    height: 160px;
+    margin: 30px auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #d4ff00;
+    box-shadow: 0 0 15px rgba(212, 255, 0, 0.3);
+}
+
+.trainer-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Contenido de la Tarjeta --- */
+.trainer-info {
+    padding: 20px 30px 30px;
+    text-align: center;
+}
+
+.trainer-info h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.specialty {
+    color: #d4ff00;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quote {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Arregla el enlace feo de "Agendar Clase" en image_3.png y hazlo botón */
+.wa-btn {
+    background: #25d366; /* Color oficial WhatsApp */
+    color: white !important; /* TEXTO LEÍBLE */
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.wa-btn:hover {
+    background: #128c7e;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+}
