@@ -1,0 +1,50 @@
+<div class="main-container">
+  <header>
+    <h1>NOVA GYM 🏋️‍♀️</h1>
+    <p>Entrena con lo mejor en Aguascalientes</p>
+  </header>
+
+  <section class="add-machine">
+    <h2>Registrar Nueva Máquina</h2>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="newMachine.nombre" placeholder="Nombre (ej: Prensa)">
+      <input type="text" [(ngModel)]="newMachine.uso" placeholder="¿Para qué sirve?">
+      <input type="text" [(ngModel)]="newMachine.musculo" placeholder="Músculo">
+      <input type="text" [(ngModel)]="newMachine.imagen" placeholder="URL de imagen de internet">
+      <button (click)="guardarMaquina()">Añadir a la sala</button>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="card" *ngFor="let m of machines">
+      <img [src]="m.imagen || 'https://via.placeholder.com/300x200?text=Gym'" alt="maquina">
+      <div class="card-content">
+        <span class="badge">{{ m.musculo }}</span>
+        <h3>{{ m.nombre }}</h3>
+        <p>{{ m.uso }}</p>
+        
+        <div class="rating">
+          <span>⭐ {{ m.rating }}</span>
+          <select (change)="valorar(m._id, $event)">
+            <option value="0">Calificar...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <div class="comments-section">
+          <h4>Comentarios ({{ m.comentarios.length }})</h4>
+          <button class="btn-delete" (click)="borrarMaquina(m._id)">Eliminar Máquina 🗑️</button>
+          <div class="comment-list">
+            <p *ngFor="let c of m.comentarios"><strong>{{ c.autor }}:</strong> {{ c.texto }}</p>
+          </div>
+          <input type="text" #cText placeholder="Escribe un comentario...">
+          <button (click)="comentar(m._id, cText.value); cText.value=''">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

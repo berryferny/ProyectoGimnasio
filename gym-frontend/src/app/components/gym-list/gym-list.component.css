@@ -1,0 +1,34 @@
+:host { --primary: #d4ff00; --dark: #1a1a1a; --gray: #2d2d2d; }
+
+.main-container { background: var(--dark); color: white; min-height: 100vh; padding: 20px; font-family: 'Arial', sans-serif; }
+header { text-align: center; margin-bottom: 40px; }
+header h1 { color: var(--primary); font-size: 3rem; margin-bottom: 0; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+.card { background: var(--gray); border-radius: 15px; overflow: hidden; transition: 0.3s; border: 1px solid #444; }
+.card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-content { padding: 20px; }
+
+.badge { background: var(--primary); color: black; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; }
+.rating { margin: 15px 0; display: flex; align-items: center; gap: 10px; }
+
+.comments-section { border-top: 1px solid #444; margin-top: 15px; padding-top: 10px; }
+.comment-list { max-height: 80px; overflow-y: auto; font-size: 0.9rem; margin-bottom: 10px; }
+
+input, button, select { background: #333; border: 1px solid #555; color: white; padding: 10px; border-radius: 5px; width: 100%; margin-bottom: 5px; }
+button { background: var(--primary); color: black; font-weight: bold; cursor: pointer; border: none; }
+button:hover { opacity: 0.8; }
+
+.btn-delete {
+    background-color: #ff4444; /* Rojo intenso */
+    color: white;
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+.btn-delete:hover {
+    background-color: #cc0000;
+    transform: scale(0.95); /* Se hace chiquito al presionar */
+}
